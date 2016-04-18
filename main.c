@@ -41,8 +41,12 @@ int main(int argc, char** argv){
 	}
 	affichage(taille_cle_hexa*4, K);
 	
-	//cadencement_cle(int K[taille_cle_hexa*4], int* deb, int* fin, int S_cle[taille_msg_hexa*4], int tour)
+	/*int* deb = NULL;
+	int* fin = NULL;*/
 	
+	//cadencement_cle(int K[taille_cle_hexa*4], int* deb, int* fin, int S_cle[taille_msg_hexa*4], int tour)
+	/*printf("deb : %d", deb);
+	printf("fin : %d", fin);*/
 	
 	/*int j=0;
 	int elt[4];
