@@ -11,7 +11,7 @@ chiffrement.o : conversion .o chiffrement.c conversion.h
 	$ gcc -c chiffrement.c -o chiffrement.o
 
 conversion.o : conversion.c
-	$ gcc -c conversion.c -o conversion.o
+	$ gcc -c conversion.c -o conversion.o -lm
 
 clean :
 	-rm Programme
