@@ -8,10 +8,10 @@ main.o : chiffrement.o main.c chiffrement.h
 	$ gcc -Wall -c main.c -o main.o
  
 chiffrement.o : conversion .o chiffrement.c conversion.h
-	$ gcc -Wall -lm -c chiffrement.c -o chiffrement.o
+	$ gcc -Wall -c chiffrement.c -o chiffrement.o -lm 
 
 conversion.o : conversion.c
-	$ gcc -Wall -lm -c conversion.c -o conversion.o
+	$ gcc -Wall -c conversion.c -o conversion.o -lm 
 
 clean :
 	-rm Programme
