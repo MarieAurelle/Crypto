@@ -20,6 +20,7 @@ int main(int argc, char** argv){
 	char cle_maitre[taille_cle_hexa];
 	//int Etat[taille_msg_hexa*4]; //puisqu'un bit en hexa vaut 4 bit en binaire
 	int K[taille_cle_hexa*4];
+	int S_cle[taille_msg_hexa*4];
 	int i;
 
 			/* Initialisation de toutes les variables déclarées */
@@ -41,12 +42,13 @@ int main(int argc, char** argv){
 	}
 	affichage(taille_cle_hexa*4, K);
 	
-	/*int* deb = NULL;
-	int* fin = NULL;*/
+	int* deb = 0;
+	int* fin = 0;
+	int tour;
 	
-	//cadencement_cle(int K[taille_cle_hexa*4], int* deb, int* fin, int S_cle[taille_msg_hexa*4], int tour)
-	/*printf("deb : %d", deb);
-	printf("fin : %d", fin);*/
+	cadencement_cle(K, &deb, &fin, S_cle, tour)
+	printf("deb : %d", deb);
+	printf("fin : %d", fin);
 	
 	/*int j=0;
 	int elt[4];
