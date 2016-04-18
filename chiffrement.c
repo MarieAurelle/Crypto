@@ -41,8 +41,8 @@ void cadencement_cle(int K[taille_cle_hexa*4], int* deb, int* fin, int S_cle[tai
 	int tmp[4];
 	int tour[5];*/
 	
-	deb = (*deb+61)%80;
-	fin = (*deb-1)%80;
+	deb = (deb+61)%80;
+	fin = (deb-1)%80;
 	
 	printf("deb : %d", &deb);
 	printf("fin : %d", &fin);
