@@ -1,6 +1,6 @@
 all : Programme
 
-Programme : *.o
+Programme : main.o chiffrement.o conversion.o
 	gcc -o Programme main.o chiffrement.o conversion.o
  
 main.o : main.c chiffrement.h
