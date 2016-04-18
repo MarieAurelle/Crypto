@@ -1,13 +1,13 @@
 all : Programme
 
-Programme : main.o
+Programme : main.o chiffrement.o conversion.o
 	$ gcc -o Programme main.o chiffrement.o conversion.o -lm
 # ici on fait l'édition de lien entre tous les fichiers en .o
 
-main.o : chiffrement.o main.c chiffrement.h
+main.o : chiffrement.o chiffrement.h main.c
 	$ gcc -Wall -c main.c -o main.o
  
-chiffrement.o : conversion .o chiffrement.c conversion.h
+chiffrement.o : conversion.o conversion.h chiffrement.c
 	$ gcc -Wall -c chiffrement.c -o chiffrement.o
 
 conversion.o : conversion.c
