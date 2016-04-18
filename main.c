@@ -1,13 +1,13 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
 #define taille_msg_hexa 16
 #define taille_cle_hexa 20
 char boite_S[16] = {'b', 'f', '3', '2', 'a', 'c', '9', '1', '6', '7', '8', '0', 'e', '5', 'd', '4'};
-char hexa[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+char hexa[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};*/
 
-#include <chiffrement.h>
+#include "chiffrement.h"
 
 /*Permet d'afficher un tableau d'int, en séparant les nombres binaires
  * de la forme : 000 0001 0010 0011 ... 1111 */
