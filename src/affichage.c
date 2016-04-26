@@ -45,7 +45,7 @@ void affichage_en_hexa(int n, int binaire[n*4], char hexadecimal[n]){
 	
 			/// Affichage ///
 	for(i=0; i<16; i++){ //...et on affiche caractère par caractère le tableau obtenu.
-		printf("%c", hexadecmal[i]);
+		printf("%c", hexadecimal[i]);
 	}
 	free(tmp);
 }
