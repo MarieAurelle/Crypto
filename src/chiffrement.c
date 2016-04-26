@@ -1,4 +1,5 @@
 #include "chiffrement.h"
+char boite_S[16] = {'b', 'f', '3', '2', 'a', 'c', '9', '1', '6', '7', '8', '0', 'e', '5', 'd', '4'};
 
 					//* CE FICHIER CONTIENT LES FONCTIONS UTILES POUR LE CHIFFREMENT *//
 
