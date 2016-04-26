@@ -63,6 +63,6 @@ int main(int argc, char** argv){
 		}
 	
 	printf("Message chiffre : \n");
-	affichage_en_hexa(taille_msg_hexa*4, Etat, msg_chiffre);
+	affichage_en_hexa(taille_msg_hexa, Etat, msg_chiffre);
 	return 0;
 }
