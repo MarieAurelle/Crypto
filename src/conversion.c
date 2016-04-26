@@ -1,11 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#define taille_msg_hexa 16
-#define taille_cle_hexa 20
-char hexa[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+#include "conversion.h"
 
-/*Cette fonction prend en entrée le chiffre hexa qu'elle doit convertir
+					//* CE FICHIER CONTIENT LES FONCTIONS DE CONVERSIONS *//
+
+/*Cette fonction prend en entrée le chiffre hexa qu'elle doit convertir en binaire
  * le tableau où elle doit écrire le résultat
  * l'endroit du tableau résultat où elle doit commencer à écrire */
 void conversion_binaire(char hexa, int binaire[4], int deb){
@@ -130,18 +127,21 @@ void conversion_binaire(char hexa, int binaire[4], int deb){
 	}
 }
 
-/* Cette fonction prend en entrée un nombre binaire
- * calcule sa forme en décimal et s'en sert pour trouver
- * la notation héxadécimale dans le tableau hexa[]
- * qui contient tous les nombres hexadécimal en fonction de leur valeur décimale
- * (qui est égale à leur place dans le tableau) et renvoie la bonne valeur*/
-char conversion_hexadecimal(int bin[4]){
-	int decimal=0, p=0, i;
+/* Cette fonction prend en entrée l'entier décimal à convertir en binaire
+ * et le tableau où stocker le résultat puis renvoie le tableau
+ * remplit en binaire correspondant à l'entier entré */
+void conversion_decimal(int entier, int bin[5]){
+	int i = 4, j;
 	
-	for(i=3; i>=0; i--){
-		decimal = decimal + bin[i]*pow(2,p);
-		p++;
+			/// Initialisation du tableau avec des 0 ///
+	for(j=0; j<5; j++){ 
+		bin[j] = 0;
 	}
 
-	return hexa[decimal];
+			/// Remplissage du tableau par la fin en binaire ///
+	while(entier != 0){
+		bin[i] = entier%2;
+		entier = entier/2;
+		i--;
+	}
 }

@@ -1,17 +1,30 @@
-all : Programme
+# project name (generate executable with this name)
+TARGET = programme
+TARGETPATH = ./bin
 
-Programme : main.o chiffrement.o conversion.o
-	$ gcc -o Programme main.o chiffrement.o conversion.o -lm
-# ici on fait l'édition de lien entre tous les fichiers en .o
+CC = gcc
+# compiling flags here
+CFLAGS = -Wall -lm -g
 
-main.o : chiffrement.o chiffrement.h main.c
-	$ gcc -Wall -c main.c -o main.o
- 
-chiffrement.o : conversion.o conversion.h chiffrement.c
-	$ gcc -Wall -c chiffrement.c -o chiffrement.o
+# change these to set the proper directories where each files should be
+OBJ_DIR = obj
+SRC_DIR = src
+BIN_DIR = bin
 
-conversion.o : conversion.c
-	$ gcc -Wall -c conversion.c -o conversion.o 
+$(TARGET) : $(OBJ_DIR)/main.o $(OBJ_DIR)/chiffrement.o $(OBJ_DIR)/affichage.o $(OBJ_DIR)/conversion.o
+	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/chiffrement.o $(OBJ_DIR)/affichage.o $(OBJ_DIR)/conversion.o -o $(BIN_DIR)/$(TARGET)
+	
+$(OBJ_DIR)/conversion.o : $(SRC_DIR)/conversion.c $(SRC_DIR)/conversion.h 
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/conversion.c -o $(OBJ_DIR)/conversion.o
 
-clean :
-	-rm Programme
+$(OBJ_DIR)/affichage.o : $(OBJ_DIR)/conversion.o $(SRC_DIR)/affichage.c $(SRC_DIR)/affichage.h
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/affichage.c -o $(OBJ_DIR)/affichage.o
+
+$(OBJ_DIR)/chiffrement.o : $(OBJ_DIR)/affichage.o $(SRC_DIR)/chiffrement.c $(SRC_DIR)/chiffrement.h
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/chiffrement.c -o $(OBJ_DIR)/chiffrement.o
+	
+$(OBJ_DIR)/main.o: $(OBJ_DIR)/chiffrement.o $(SRC_DIR)/main.c
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o
+
+clean:
+	rm -rf $(OBJ_DIR)/*.o $(BIN_DIR)/*
