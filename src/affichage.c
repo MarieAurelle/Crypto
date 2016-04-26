@@ -17,7 +17,7 @@ void affichage(int n, int tab[n]){
 
 /* Cette fonction convertie puis affiche en hexa une clé/un message
  * dont n correspond à la taille en hexa, cad soit 16, soit 20 */
-void affichage_en_hexa(int n; int binaire[n*4], char hexadecimal[n]){
+void affichage_en_hexa(int n, int binaire[n*4], char hexadecimal[n]){
 	
 			/// Déclaration des variables ///
 	int i, j, p, k, l;
