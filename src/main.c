@@ -62,7 +62,7 @@ int main(int argc, char** argv){
 			Etat[j] = XOR(Etat[j], S_cle[j]);
 		}
 	
-	printf("Message chiffre : \n");
+	printf("Message chiffre : ");
 	affichage_en_hexa(taille_msg_hexa, Etat, msg_chiffre);
 	return 0;
 }

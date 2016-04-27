@@ -39,17 +39,18 @@ void substitution_msg(int Etat[taille_msg_hexa*4]){
 
 			/// Initialisation des variables ///
 	tmp = malloc(sizeof(int)*4);
+	i = 0;
 	
 			/// Substitution ///
-	for(i=0; i<taille_msg_hexa*4; 1){ //Sur toute la longueur du message...
-			for(j=0; j<4; i++, j++){ //...on remplit tmp 4 par 4...
-				tmp[j] = Etat[i];
-			}
-			substitution(tmp); //...on fait la substitution...
-			for(j=0, i=i-4; j<4; i++, j++){ //...on le remet à la bonne place dans le message.
-				Etat[i] = tmp[j];
-			}
+	while(i<taille_msg_hexa*4){ //Sur toute la longueur du message...
+		for(j=0; j<4; i++, j++){ //...on remplit tmp 4 par 4...
+			tmp[j] = Etat[i];
 		}
+		substitution(tmp); //...on fait la substitution...
+		for(j=0, i=i-4; j<4; i++, j++){ //...on le remet à la bonne place dans le message.
+			Etat[i] = tmp[j];
+		}
+	}
 	free(tmp);	
 }
 
