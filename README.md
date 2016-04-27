@@ -31,3 +31,5 @@ dossier bin. Il suffit alors d'ouvrir le dossier bin (cd bin) puis de taper la c
 A ce moment le programme va se lanceret vous demander la clé maitre à entrer, vous aller donc devoir entrer une clé en hexadecimal de 20 bits. 
 Ensuite, le message clair va vous êtredemandé et il faudra entrer un message clair en hexadecimal de 16 bits.Le programme va vous générer 
 directement le message chiffré correspondant.
+
+Si vous souhaitez supprimer tous les fichiers .o et l'exécutable, il suffit de taper "make clean".
