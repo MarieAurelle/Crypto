@@ -23,8 +23,8 @@ découpé en 4 parties :
 
 - COMPILATION ET EXECUTION DU PROJET :
 
-Pour compiler le code, il suffit d'aller à la racine du projet, donc dans le dossier "Aurelle_Marie_Projet_Crypto", où se trouve le Makefile.
-Il faut utiliser la commande "make" pour compiler, les fichiers .c et .h nécessaires vont aller être chercher dans le dossier src et les fichiers
+Pour compiler le code, il suffit d'aller à la racine du projet, donc dans le dossier "Aurelle_Marie_Projet_Crypto", où se trouve le script.
+Il faut lancer le script qui utilisera la commande "make" pour compiler, les fichiers .c et .h nécessaires vont aller être chercher dans le dossier src et les fichiers
 .o générés vont être placés dans le dossier obj. Une fois l'édition de lien effectuée, l'exécutable appelé "programme" va être placé dans le
 dossier bin. Il suffit alors d'ouvrir le dossier bin (cd bin) puis de taper la commande "./programme". 
 
